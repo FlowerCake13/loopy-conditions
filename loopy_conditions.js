@@ -6,7 +6,13 @@
  * @param  { Number } b
  * @return { Number }
  */
-
+function greaterNumber(a, b) {
+	if (a > b) {
+		return a;
+	}else{
+		return b;
+	}
+}
 
 /**
  * Create a function called 'stringOfNumbers'.
@@ -17,7 +23,15 @@
  * @param  { Number } n
  * @return { String }
  */
-
+function stringOfNumbers(n) {
+	var count = 0;
+	var result = "";
+	while(count < n){
+		result += count;
+		count++
+	}
+	return result;
+}
 
 /**
  * Create a function called 'sumOfArray'.
@@ -27,7 +41,16 @@
  * @param  { array } arr
  * @return { Number }
  */
-
+function sumOfArray(arr) {
+	var i;
+	var result = 0;
+	for(i = 0; i < arr.length; i++){
+		if (typeof arr[i] === "number") {
+			result = arr[i] + result;
+		}
+	}
+	return result;
+}
 
 /**
  * Create a function called 'getEvens'.
@@ -36,7 +59,16 @@
  * @param  { array } arr
  * @return { array }
  */
-
+function getEvens(arr) {
+	var i;
+	var newArr = [];
+	for(i = 0; i < arr.length; i++){
+		if (arr[i] % 2 === 0) {
+			newArr.push(arr[i])
+		}
+	}
+	return newArr;
+}
 
 /**
  * Create a function called 'getOdds'.
@@ -45,7 +77,16 @@
  * @param  { array } arr
  * @return { array }
  */
-
+function getOdds(arr) {
+	var i;
+	var newArr = [];
+	for(i = 0; i < arr.length; i++){
+		if (arr[i] % 2 !== 0) {
+			newArr.push(arr[i])
+		}
+	}
+	return newArr;
+}
 
 /**
  * Create a function called 'calculate'.
@@ -61,3 +102,21 @@
  * @param  { String } operator ('add', subtract, 'multiply', 'divide')
  * @return { Number/String }
  */
+function calculate(int1, int2, operator) {
+	var result = 0;
+	if (operator === 'add') {
+		result = int1 + int2;
+	}
+	else if (operator === 'subtract') {
+		result = int1 - int2;
+	}
+	else if (operator === 'multiply') {
+		result = int1 * int2;
+	}
+	else if (operator === 'divide') {
+		result = int1 / int2;
+	}else{
+		result = 'Invalid operator'
+	}
+	return result
+}
